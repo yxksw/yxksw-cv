@@ -1,13 +1,14 @@
 {
-  "name": "鹊楠",
-  "age": "06",
-  "zodiac": "天蝎座♏",
-  "avatarUrl": "https://i.p-i.vip/43/20240913-66e403f2331ec.webp",
+  "name": "麦希屿",
+  "age": "未知",
+  "zodiac": "小白羊♈",
+  "avatarUrl": "https://cdn.jsdelivr.net/gh/cubeyu/cubeyu.github.io/my-avatar.png",
   "emjoi": "😋",
   "infoTags": {
     "sex": "男",
-    "school": "惠州城市职业学校",
-    "province": "广东省"
+    "company": "Datang",
+    "province": "广东",
+    "qq": "邮箱联系"
   },
-  "professions": ["学生", "前端入门者", "后端初学者"]
+  "professions": ["AI研究学者", "前端入门者", "后端入门者"]
 }

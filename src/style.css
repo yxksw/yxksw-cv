@@ -1,37 +1,61 @@
+/* 全局字体设置 */
 * {
-  transition: all .3s ease-in-out;
+  font-family: 'AlimamaFangYuanTiVF-Thin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* 只为特定元素设置过渡效果，避免全局性能问题 */
+body,
+.app,
+.theme-toggle,
+.card,
+.techItem,
+.todoItem,
+.cursor-effect,
+.custom-cursor,
+.cursor-trail {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 :root {
-  /* 背景颜色 */
+  /* 背景颜色 - 统一为与小方块一致的基础颜色 */
   --background: #d0e8ff;
   /* 主题颜色 */
   --theme-color: #ffb3b3;
   /* 文字颜色 */
   --text-color: #000;
-  /* 卡片背景颜色 */
-  --card-background: #ffffff7d;
-  /* 卡片边框颜色 */
-  --card-border-color: #fff;
-  /* 技术栈背景颜色 */
-  --techItem-background: #e5e5e5;
+  /* 卡片背景颜色 - 亚克力效果 */
+  --card-background: rgba(255, 255, 255, 0.7);
+  /* 卡片边框颜色 - 细微高光 */
+  --card-border-color: rgba(255, 255, 255, 0.8);
+  /* 小方块背景颜色 - 亚克力效果 */
+  --square-background: rgba(255, 255, 255, 0.6);
+  /* 小方块边框颜色 - 细微高光 */
+  --square-border-color: rgba(255, 255, 255, 0.9);
   /* 提示文字颜色 */
   --tip-color: #fff;
   /* 加载动画背景颜色 */
   --loading-background: var(--theme-color);
+  /* 模糊效果强度 */
+  --blur-strength: 12px;
+  /* 阴影效果 */
+  --shadow-light: rgba(255, 255, 255, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
 }
 
 [theme='dark'] {
-  /* 背景颜色 */
+  /* 背景颜色 - 统一为深色 */
   --background: #222222;
   /* 文字颜色 */
   --text-color: #fff;
-  /* 卡片背景颜色 */
-  --card-background: #292929;
-  /* 卡片边框颜色 */
-  --card-border-color: #444444;
-  /* 技术栈背景颜色 */
-  --techItem-background: transparent;
+  /* 卡片背景颜色 - 亚克力效果 */
+  --card-background: rgba(45, 45, 45, 0.7);
+  /* 小方块背景颜色 - 亚克力效果 */
+  --square-background: rgba(68, 68, 68, 0.6);
+  /* 小方块边框颜色 - 细微高光 */
+  --square-border-color: rgba(95, 95, 95, 0.9);
   /* 加载动画背景颜色 */
   --loading-background: #2b2b2b;
+  /* 阴影效果 */
+  --shadow-light: rgba(255, 255, 255, 0.05);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
 }

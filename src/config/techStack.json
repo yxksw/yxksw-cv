@@ -35,14 +35,6 @@
     {
       "icon": "skill-icons:jquery",
       "name": "Jquery"
-    },
-    {
-      "icon": "skill-icons:photoshop",
-      "name": "PhotoShop"
-    },
-    {
-      "icon": "devicon:xd",
-      "name": "XD"
     }
   ]
 }

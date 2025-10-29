@@ -4,31 +4,53 @@
       "icon": "fa7-solid:blog",
       "text": "博客",
       "color": "#ffb3b3",
-      "url": "https://blog.quenan.cn/"
+      "url": "https://cubeyu.cnblogs.com/"
     },
     {
       "icon": "mdi:github",
       "text": "Github",
       "color": "#2b2b2b",
-      "url": "https://github.com/QNquenan"
+      "url": "https://github.com/cubeyu"
     },
     {
       "icon": "mingcute:bilibili-line",
       "text": "哔哩哔哩",
       "color": "#0BA7D4",
-      "url": "https://space.bilibili.com/495882959"
+      "url": "https://space.bilibili.com/88154706"
     },
     {
       "icon": "line-md:email",
       "text": "邮箱",
       "color": "#FDB34F",
-      "url": "mailto:qn2987271942@outlook.com"
+      "url": "mailto:cubeyu@aliyun.com"
     },
     {
       "icon": "tabler:brand-netease-music",
       "text": "网易云",
       "color": "#DC1555",
-      "url": "https://music.163.com/#/playlist?id=2696501847&creatorId=1785635020"
+      "url": "https://music.163.com/#/user/home?id=2045001381"
+    }
+    ,
+    {
+      "icon": "tabler:trending-up",
+      "text": "今日热搜",
+      "color": "#0099FF",
+      "url": "https://hot.techisle.top/"
+    }
+    ,
+    {
+      "icon": "tabler:heart",
+      "text": "支持一下",
+      "color": "#FF6600",
+      "url": "https://donate.techisle.top/"
+    }
+    ,
+    {
+      "icon": "mingcute:check-line",
+      "text": "站点监控",
+      "color": "#00CC00",
+      "url": "https://check.techisle.top/"
+      
     }
   ]
 }

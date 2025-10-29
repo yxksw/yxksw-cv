@@ -1,61 +1,152 @@
 <template>
-  <Transition name="fade" appear>
-    <Loading v-if="showLoading" />
-  </Transition>
-  <main>
+  <div v-if="!showLoading" class="app" :class="{ 'dark': theme == 'dark' }">
+    <!-- 粒子背景 -->
+    <ParticlesBackground />
+    <!-- 自定义鼠标光标效果 -->
+    <CustomCursor />
+    <!-- 主卡片内容 -->
     <main-card></main-card>
-  </main>
-  <div class="reThemeBtn" @click="changeTheme">
-    {{ theme == "light" ? "🔆" : "🌙" }}
+
+  </div>
+  <div v-else class="loading">
+    <Loading />
+    <p>加载中...</p>
   </div>
 </template>
 
 <script setup>
 import MainCard from "./views/MainCard.vue";
 import Loading from "./components/Loading.vue";
-import { onMounted, ref } from "vue";
+import ParticlesBackground from './components/ParticlesBackground.vue';
+import CustomCursor from './components/CustomCursor.vue';
+import { ref, onMounted } from "vue";
 
-let theme = ref(localStorage.getItem("theme") || "light");
 let showLoading = ref(true);
+
 document.body.style.overflow = "hidden";
 
 onMounted(() => {
-  document.body.setAttribute("theme", theme.value);
-  showLoading.value = false;
+  // 模拟加载时间，但简化过程避免多次setTimeout
   setTimeout(() => {
+    showLoading.value = false;
     document.body.style.overflow = "";
-  }, 300);
+    // 移除延迟的淡入效果，直接显示内容
+    requestAnimationFrame(() => {
+      const app = document.querySelector('.app');
+      if (app) {
+        app.style.opacity = 1;
+      }
+    });
+  }, 1000);
+  
+  // 鼠标移动监听已在CustomCursor组件中处理
 });
-
-const changeTheme = () => {
-  if (theme.value == "light") {
-    theme.value = "dark";
-    onTheme("dark");
-  } else {
-    theme.value = "light";
-    onTheme("light");
-  }
-
-  console.log(theme.value);
-};
-
-const onTheme = (theme) => {
-  document.body.setAttribute("theme", theme);
-  localStorage.setItem("theme", theme);
-};
 </script>
 
 <style>
 @import url(assets/css/App.css);
 
-/* 添加渐隐效果的CSS */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+/* 应用容器 */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0; /* 初始状态 */
+  transition: opacity 0.3s ease-out, background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.app.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* 鼠标跟随效果 */
+.cursor-effect {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.3);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+/* 主题相关逻辑在MainCard组件中实现 */
+
+/* 加载动画 */
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  cursor: default;
+}
+
+/* 链接和按钮的自定义光标 */
+a, button {
+  position: relative;
+  z-index: 10;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+  
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .cursor-effect {
+    display: none;
+  }
+  
+  * {
+    cursor: default;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
 }
 </style>
