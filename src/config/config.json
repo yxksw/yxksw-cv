@@ -1,14 +1,15 @@
 {
   "name": "麦希屿",
-  "age": "未知",
+  "age": "Null",
   "zodiac": "小白羊♈",
   "avatarUrl": "https://cdn.jsdelivr.net/gh/cubeyu/cubeyu.github.io/my-avatar.png",
+  "wxgzh": "https://cdn.jsdelivr.net/gh/cubeyu/cubeyu.github.io/qrcode.webp",
   "emjoi": "😋",
   "infoTags": {
     "sex": "男",
-    "company": "DaTang",
-    "province": "广东",
-    "qq": "邮箱"
+    "company": "DT",
+    "province": "China",
+    "github": "cubeyu"
   },
-  "professions": ["AI研究学者", "前端入门者", "后端入门者"]
+  "professions": ["AI训练师", "全栈攻城狮", "桌面运维"]
 }

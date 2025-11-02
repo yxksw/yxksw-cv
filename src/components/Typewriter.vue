@@ -1,17 +1,21 @@
 <template>
   <div class="typewriter">
-    <span 
-      v-for="(char, index) in displayedChars" 
-      :key="index"
-      :class="['typewriter-char', { 'char-animated': index < animatedIndex }]"
-      :style="{
-        animationDelay: (index * 0.05) + 's',
-        opacity: index <= animatedIndex ? 1 : 0
-      }"
-    >
-      {{ char }}
-    </span>
-    <span class="cursor" :class="{ blink: showCursor, pulse: isComplete }">|</span>
+    <template v-for="(char, index) in displayedChars" :key="index">
+      <span 
+        class="typewriter-char"
+        :style="{
+          opacity: index <= animatedIndex ? 1 : 0
+        }"
+      >
+        {{ char }}
+      </span>
+      <!-- 只有当当前字符是最后一个显示的字符时，才显示光标 -->
+      <span 
+        v-if="index === animatedIndex" 
+        class="cursor"
+        :class="{ blink: showCursor, pulse: isComplete }"
+      >|</span>
+    </template>
   </div>
 </template>
 
@@ -184,27 +188,8 @@ onUnmounted(() => {
 
 .typewriter-char {
   display: inline-block;
-  transition: opacity 0.3s ease;
-  transform-origin: center;
+  transition: opacity 0.1s ease;
   opacity: 0;
-}
-
-.char-animated {
-  animation: charPop 0.2s ease-out;
-}
-
-@keyframes charPop {
-  0% {
-    transform: scale(0.8) translateY(5px);
-    opacity: 0;
-  }
-  70% {
-    transform: scale(1.1) translateY(-2px);
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
 }
 
 .cursor {

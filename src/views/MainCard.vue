@@ -65,7 +65,7 @@
           </div>
           <div class="tag hover">
             <Icon icon="ep:chat-square" width="16" height="16" class="tag-icon" />
-            {{ config.infoTags.qq }}
+            {{ config.infoTags.github }}
           </div>
         </div>
       </div>

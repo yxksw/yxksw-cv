@@ -1,44 +1,24 @@
 <template>
-  <div v-if="!showLoading" class="app" :class="{ 'dark': theme == 'dark' }">
+  <div class="app" :class="{ 'dark': theme == 'dark' }">
     <!-- 粒子背景 -->
     <ParticlesBackground />
     <!-- 自定义鼠标光标效果 -->
     <CustomCursor />
     <!-- 主卡片内容 -->
     <main-card></main-card>
-
-  </div>
-  <div v-else class="loading">
-    <Loading />
-    <p>加载中...</p>
   </div>
 </template>
 
 <script setup>
 import MainCard from "./views/MainCard.vue";
-import Loading from "./components/Loading.vue";
 import ParticlesBackground from './components/ParticlesBackground.vue';
 import CustomCursor from './components/CustomCursor.vue';
 import { ref, onMounted } from "vue";
+import config from './config/config.json';
 
-let showLoading = ref(true);
-
-document.body.style.overflow = "hidden";
+const theme = ref(config.theme || 'light');
 
 onMounted(() => {
-  // 模拟加载时间，但简化过程避免多次setTimeout
-  setTimeout(() => {
-    showLoading.value = false;
-    document.body.style.overflow = "";
-    // 移除延迟的淡入效果，直接显示内容
-    requestAnimationFrame(() => {
-      const app = document.querySelector('.app');
-      if (app) {
-        app.style.opacity = 1;
-      }
-    });
-  }, 1000);
-  
   // 鼠标移动监听已在CustomCursor组件中处理
 });
 </script>
@@ -69,8 +49,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  opacity: 0; /* 初始状态 */
-  transition: opacity 0.3s ease-out, background-color 0.3s ease, color 0.3s ease;
+  opacity: 1; /* 直接显示内容 */
+  transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
 }
 
@@ -96,16 +76,7 @@ body {
 
 /* 主题相关逻辑在MainCard组件中实现 */
 
-/* 加载动画 */
-.loading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  cursor: default;
-}
+/* 移除加载动画样式 */
 
 /* 链接和按钮的自定义光标 */
 a, button {
