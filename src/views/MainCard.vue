@@ -158,7 +158,7 @@
           <p>
             我叫
             <b>{{ config.name }}</b>
-            （ {{ config.age }}年的 <b class="zodiac">{{ config.zodiac }}</b> ）
+            （ {{ age }}岁的 <b class="zodiac">{{ config.zodiac }}</b> ）
           </p>
           <p>
             是一名
@@ -197,6 +197,8 @@
             :text="i.text"
             :color="i.color"
             :url="i.url"
+            :iconType="i.iconType"
+            :iconUrl="i.iconUrl"
           ></link-btn>
         </div>
       </div>
@@ -204,7 +206,7 @@
 
     <div class="footer">
       <p>
-        ©2025 麦希屿
+        ©2026-{{ now.getFullYear() }} 异飨客
       </p>
     </div>
   </div>
@@ -222,6 +224,12 @@ import { onMounted, ref, computed, nextTick } from "vue";
 import Typewriter from "../components/Typewriter.vue";
 
 const now = ref(new Date());
+
+const age = computed(() => {
+  const birthYear = config.birthYear;
+  const currentYear = now.value.getFullYear();
+  return currentYear - birthYear;
+});
 
 // 主题状态
 const theme = ref(localStorage.getItem('theme') || 'light');

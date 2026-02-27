@@ -1,19 +1,19 @@
 {
   "todoList": [
     {
-      "text": "训练AI大模型",
+      "text": "魔改Afoim的博客",
       "checked": false
     },
     {
-      "text": "学会粤语",
+      "text": "魔改hexo-solitude",
       "checked": false
     },
     {
-      "text": "开发企业知识库",
+      "text": "魔改纸鹿博客",
       "checked": false
     },
     {
-      "text": "重构个人主页",
+      "text": "重构个人介绍页",
       "checked": true
     }
   ]

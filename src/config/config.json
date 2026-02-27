@@ -1,14 +1,14 @@
 {
-  "name": "麦希屿",
-  "age": "Null",
-  "zodiac": "小白羊♈",
-  "avatarUrl": "https://cdn.jsdelivr.net/gh/cubeyu/cubeyu.github.io/my-avatar.png",
+  "name": "异飨客",
+  "birthYear": 2005,
+  "zodiac": "狮子座♌",
+  "avatarUrl": "https://cdn.jsdmirror.com/gh/zsxcoder/github-img@main/img/yxk-avatar.avif",
   "emjoi": "😋",
   "infoTags": {
     "sex": "男",
-    "company": "DT",
+    "company": "NVUIT",
     "province": "China",
-    "github": "cubeyu"
+    "github": "yxksw"
   },
-  "professions": ["AI训练师", "全栈攻城狮", "桌面运维"]
+  "professions": ["学生", "博客写作者", "小说热爱者"]
 }

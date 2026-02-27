@@ -5,7 +5,12 @@
     target="_blank"
     :style="{ background: color }"
   >
-    <Icon :icon="icon" width="36" height="36" />
+    <template v-if="iconType === 'image' && iconUrl">
+      <img :src="iconUrl" :alt="text" class="link-icon" />
+    </template>
+    <template v-else>
+      <Icon :icon="icon" width="36" height="36" />
+    </template>
     <span>{{ text }}</span>
   </a>
 </template>
@@ -17,6 +22,8 @@ const props = defineProps({
   text: String,
   color: String,
   url: String,
+  iconType: String, // 'icon' or 'image'
+  iconUrl: String,  // image URL
 });
 </script>
 <style>
@@ -49,7 +56,8 @@ const props = defineProps({
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
     
-    & .iconify {
+    & .iconify,
+    & .link-icon {
       transform: scale(1.1) rotate(5deg);
     }
   }
@@ -75,5 +83,12 @@ const props = defineProps({
     padding: 0.6rem 1.2rem;
     font-size: 19px;
   }
+}
+
+.link-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 </style>

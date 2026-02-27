@@ -6,6 +6,8 @@
     <CustomCursor />
     <!-- 主卡片内容 -->
     <main-card></main-card>
+    <!-- 音乐胶囊播放器 -->
+    <MusicCapsule />
   </div>
 </template>
 
@@ -13,6 +15,7 @@
 import MainCard from "./views/MainCard.vue";
 import ParticlesBackground from './components/ParticlesBackground.vue';
 import CustomCursor from './components/CustomCursor.vue';
+import MusicCapsule from './components/MusicCapsule.vue';
 import { ref, onMounted } from "vue";
 import config from './config/config.json';
 

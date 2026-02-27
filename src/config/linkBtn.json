@@ -1,56 +1,84 @@
 {
   "linkBtn": [
     {
+      "icon": "tabler:home",
+      "text": "主页",
+      "color": "#0CF255",
+      "url": "https://home.050815.xyz/"
+    },
+    {
       "icon": "fa7-solid:blog",
       "text": "博客",
       "color": "#ffb3b3",
-      "url": "https://cubeyu.cnblogs.com/"
+      "url": "https://cofe.050815.xyz/"
+    },
+    {
+      "iconType": "image",
+      "iconUrl": "/cover/zhilu.png",
+      "text": "Clarity博客",
+      "color": "#0C12F2",
+      "url": "https://cofe.050815.xyz/"
     },
     {
       "icon": "mdi:github",
       "text": "Github",
       "color": "#2b2b2b",
-      "url": "https://github.com/cubeyu"
+      "url": "https://github.com/yxksw"
     },
     {
       "icon": "mingcute:bilibili-line",
       "text": "哔哩哔哩",
       "color": "#0BA7D4",
-      "url": "https://space.bilibili.com/88154706"
+      "url": "https://space.bilibili.com/3546643173477234"
+    },
+    {
+      "icon": "mdi:telegram",
+      "text": "Telegram",
+      "color": "#0BA7D4",
+      "url": "https://t.me/yxksw_bot"
     },
     {
       "icon": "line-md:email",
       "text": "邮箱",
       "color": "#FDB34F",
-      "url": "mailto:cubeyu@aliyun.com"
+      "url": "mailto:yxksw@foxmail.com"
     },
-    {
-      "icon": "tabler:brand-wechat",
-      "text": "公众号",
-      "color": "#DC1555",
-      "url": "https://mp.weixin.qq.com/s/Wm0BFsdFGwRamEJZEUJ18g"
-    }
-    ,
-    {
-      "icon": "tabler:trending-up",
-      "text": "今日热搜",
-      "color": "#0099FF",
-      "url": "https://hot.techisle.top/"
-    }
-    ,
     {
       "icon": "tabler:heart",
       "text": "支持一下",
       "color": "#FF6600",
-      "url": "https://donate.techisle.top/"
+      "url": "https://sponsor.050815.xyz/"
     }
     ,
     {
       "icon": "mingcute:check-line",
       "text": "站点监控",
       "color": "#00CC00",
-      "url": "https://check.techisle.top/"
-      
+      "url": "https://status.050815.xyz/"
+    },
+    {
+      "icon": "octicon:gist",
+      "text": "代码片段",
+      "color": "#27EBF5",
+      "url": "https://gist.152531.xyz/"
+    },
+    {
+      "icon": "mdi:music",
+      "text": "音乐",
+      "color": "#F5DD27",
+      "url": "https://music.050815.xyz/"
+    },
+    {
+      "icon": "bx:blanket",
+      "text": "封面",
+      "color": "#F527F2",
+      "url": "https://cover.050815.xyz/"
+    },
+    {
+      "icon": "si:more-horiz-square-duotone",
+      "text": "更多",
+      "color": "#F5A327",
+      "url": "https://home.050815.xyz/sites"
     }
   ]
 }
