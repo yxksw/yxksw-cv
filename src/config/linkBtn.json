@@ -13,6 +13,12 @@
       "url": "https://cofe.050815.xyz/"
     },
     {
+      "iconType": "whh:github",
+      "text": "Github主页",
+      "color": "#D3FF03",
+      "url": "https://cv.050815.xyz/"
+    },
+    {
       "iconType": "image",
       "iconUrl": "/cover/zhilu.png",
       "text": "Clarity博客",
